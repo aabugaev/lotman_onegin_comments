@@ -1,0 +1,10 @@
+# intermediate files of tools/build.sh
+build/
+
+# text of Lotman's commentary: under copyright, for personal use only
+local/
+
+# source edition of the novel
+*.pdf
+
+.claude/

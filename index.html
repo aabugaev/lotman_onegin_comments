@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Евгений Онегин с комментарием Ю. М. Лотмана</title>
+<meta name="description" content="Роман А. С. Пушкина «Евгений Онегин»: места, прокомментированные Ю. М. Лотманом, выделены в тексте и открываются по щелчку.">
+<meta name="theme-color" content="#f7f3ea">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar" id="bar">
+  <button class="icon-btn" id="toc-btn" aria-label="Оглавление" aria-expanded="false" aria-controls="toc">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="bar-title"><span class="bar-work">Евгений Онегин</span><span class="bar-where" id="where"></span></div>
+  <button class="icon-btn" id="settings-btn" aria-label="Настройки" aria-expanded="false" aria-controls="settings">
+    <span class="aa" aria-hidden="true">Аа</span>
+  </button>
+</header>
+
+<nav class="drawer" id="toc" hidden aria-label="Оглавление"></nav>
+
+<div class="popover" id="settings" hidden>
+  <div class="set-row">
+    <span class="set-label">Размер текста</span>
+    <div class="seg">
+      <button type="button" id="font-minus" aria-label="Мельче">А−</button>
+      <button type="button" id="font-plus" aria-label="Крупнее">А+</button>
+    </div>
+  </div>
+  <div class="set-row">
+    <span class="set-label">Тема</span>
+    <div class="seg" id="theme-seg">
+      <button type="button" data-theme="auto">Авто</button>
+      <button type="button" data-theme="light">Светлая</button>
+      <button type="button" data-theme="dark">Тёмная</button>
+    </div>
+  </div>
+  <div class="set-row">
+    <label class="set-label" for="hl-toggle">Выделять комментируемые места</label>
+    <input type="checkbox" id="hl-toggle" checked>
+  </div>
+  <div class="set-block">
+    <div class="set-label">Текст комментария</div>
+    <p class="set-note" id="lotman-status"></p>
+    <div class="set-actions">
+      <button type="button" class="btn" id="import-btn">Загрузить файл…</button>
+      <button type="button" class="btn ghost" id="forget-btn" hidden>Удалить из браузера</button>
+      <input type="file" id="import-file" accept=".json,application/json" hidden>
+    </div>
+  </div>
+</div>
+
+<main id="text" class="text" aria-live="polite"><p class="loading">Загрузка текста…</p></main>
+
+<aside class="panel" id="panel" aria-label="Комментарий" hidden>
+  <div class="panel-grip" aria-hidden="true"></div>
+  <header class="panel-head">
+    <span class="panel-kicker" id="panel-kicker">Комментарий Ю. М. Лотмана</span>
+    <button class="icon-btn" id="panel-close" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+  <div class="panel-body" id="panel-body"></div>
+</aside>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
